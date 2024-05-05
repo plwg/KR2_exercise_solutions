@@ -1,13 +1,7 @@
-/*
-1. Tested zero lenght input
-2. Tested moby dick
-*/
 #include <stdio.h>
 
 #define IN 1  /* inside a word */
 #define OUT 0 /* outside a word */
-
-/* counts lines, words and characters as input */
 
 int main()
 {
@@ -19,7 +13,7 @@ int main()
     {
         if (current == ' ' || current == '\n' || current == '\t')
         {
-            if (state == IN) 
+            if (state == IN)
             {
                 printf("\n");
             }
@@ -28,8 +22,8 @@ int main()
         }
         else
         {
-           state = IN;
-           putchar(current);
+            state = IN;
+            putchar(current);
         }
     }
 
