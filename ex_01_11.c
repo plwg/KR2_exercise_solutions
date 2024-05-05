@@ -1,7 +1,6 @@
 /*
 1. Tested zero lenght input
 2. Tested moby dick
-
 */
 #include <stdio.h>
 
