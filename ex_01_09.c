@@ -1,4 +1,4 @@
-// Test with echo -en 'a  b  c  d      e' | ./a.out
+// Test with echo -en 'a  b  c  d      e' | ./ex_01_09.o
 
 #include <stdio.h>
 

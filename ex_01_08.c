@@ -1,4 +1,4 @@
-// Test with echo -en "abcd\naaaa\tdf" | ./a.out 
+// Test with echo -en "abcd\naaaa\tdf" | ./ex_01_08.o
 
 #include <stdio.h>
 

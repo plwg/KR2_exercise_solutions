@@ -1,4 +1,4 @@
-// Test with cat ex_1_10.c | ./a.out
+// Test with cat ex_01_10.c | ./ex_01_10.o
 
 #include <stdio.h>
 
