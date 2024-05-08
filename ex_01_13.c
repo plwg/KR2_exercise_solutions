@@ -3,8 +3,7 @@
 #define IN 1
 #define OUT 0
 #define NBIN 20
-#define MAX_WIDTH 20
-#define MAX_HEIGHT 20
+#define MAX_DIM 20
 
 void print_horizontal_histogram(int stat[], int star_size);
 void print_vertical_histogram(int stat[], int height, int star_size);
@@ -33,7 +32,7 @@ int main()
                     bin = NBIN;
                 }
 
-                stat[bin-1]++;
+                stat[bin - 1]++;
             }
             count = 0;
             status = OUT;
@@ -53,9 +52,9 @@ int main()
         }
     }
 
-    height = max > MAX_HEIGHT ? MAX_HEIGHT : max;
+    height = max > MAX_DIM ? MAX_DIM : max;
 
-    print_horizontal_histogram(stat, max / MAX_WIDTH + 1);
+    print_horizontal_histogram(stat, max / MAX_DIM + 1);
     printf("\n\n\n\n\n");
     print_vertical_histogram(stat, height, max / height + 1);
 
@@ -119,7 +118,7 @@ void print_vertical_histogram(int stat[], int height, int star_size)
     printf(" "); // Align the labels with the bars
     for (int j = 0; j < NBIN; j++)
     {
-        printf("%2d ", j + 1); 
+        printf("%2d ", j + 1);
     }
     printf("\n");
 }
