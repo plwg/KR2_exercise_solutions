@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-#define IN 1
-#define OUT 0
+#include <stdbool.h>
 #define NBIN 20
 #define MAX_DIM 20
 
@@ -12,7 +11,7 @@ int main()
 {
     int c;
     int stat[NBIN] = {0};
-    int status = OUT;
+    bool is_in_word = false;
     int count, max;
     int bin;
     int height;
@@ -23,7 +22,7 @@ int main()
     {
         if (isspace(c) || ispunct(c) || isdigit(c))
         {
-            if (status == IN)
+            if (is_in_word == true)
             {
                 bin = count;
 
@@ -35,11 +34,11 @@ int main()
                 stat[bin - 1]++;
             }
             count = 0;
-            status = OUT;
+            is_in_word = false;
         }
         else
         {
-            status = IN;
+            is_in_word = true;
             count++;
         }
     }
