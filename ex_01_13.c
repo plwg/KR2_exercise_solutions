@@ -23,18 +23,18 @@ int main()
 
     while ((c = getchar()) != EOF)
     {
-        if (c == '\n' || c == ' ' || c == '\t' || ispunct(c) || isdigit(c))
+        if (isspace(c) || ispunct(c) || isdigit(c))
         {
             if (status == IN)
             {
                 bin = count / BIN_SIZE;
 
-                if (bin > NBIN)
+                if (bin >= NBIN)
                 {
-                    bin = NBIN;
+                    bin = NBIN - 1;
                 }
 
-                stat[bin - 1] = stat[bin - 1] + 1;
+                stat[bin] = stat[bin] + 1;
             }
             count = 0;
             status = OUT;
