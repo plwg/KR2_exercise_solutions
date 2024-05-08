@@ -45,10 +45,7 @@ int main()
 
     for (int i = 0; i < NBIN; i++)
     {
-        if (stat[i] > max)
-        {
-            max = stat[i];
-        }
+        max = (stat[i] > max ? stat[i] : max);
     }
 
     height = max > MAX_DIM ? MAX_DIM : max;
