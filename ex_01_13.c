@@ -3,7 +3,6 @@
 #define IN 1
 #define OUT 0
 #define NBIN 20
-#define BIN_SIZE 1
 #define MAX_WIDTH 20
 #define MAX_HEIGHT 20
 
@@ -27,14 +26,14 @@ int main()
         {
             if (status == IN)
             {
-                bin = count / BIN_SIZE;
+                bin = count;
 
-                if (bin >= NBIN)
+                if (bin > NBIN)
                 {
-                    bin = NBIN - 1;
+                    bin = NBIN;
                 }
 
-                stat[bin] = stat[bin] + 1;
+                stat[bin-1]++;
             }
             count = 0;
             status = OUT;
