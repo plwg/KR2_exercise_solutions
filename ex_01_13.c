@@ -1,22 +1,30 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
-#define NBIN 20
-#define MAX_DIM 20
 
-void print_horizontal_histogram(int stat[], int star_size);
-void print_vertical_histogram(int stat[], int height, int star_size);
+void print_horizontal_histogram(int stat[], int len, int star_size);
+void print_vertical_histogram(int stat[], int len, int height, int star_size);
+int calc_star_size(int max, int max_dim);
 
 int main()
 {
+
+    const int MAX_DIM = 20;
+    const int NBIN = 20;
+
     int c;
-    int stat[NBIN] = {0};
+    int stat[NBIN];
     bool is_in_word = false;
     int count, max;
     int bin;
     int height;
 
     count = max = 0;
+
+    for (int i = 0; i < NBIN; i++)
+    {
+        stat[i] = 0;
+    }
 
     while ((c = getchar()) != EOF)
     {
@@ -50,26 +58,30 @@ int main()
 
     height = max > MAX_DIM ? MAX_DIM : max;
 
-    print_horizontal_histogram(stat, max / MAX_DIM + 1);
+    print_horizontal_histogram(stat, NBIN, calc_star_size(max, MAX_DIM));
     printf("\n\n\n\n\n");
-    print_vertical_histogram(stat, height, max / height + 1);
+    print_vertical_histogram(stat, NBIN, height, calc_star_size(max, height));
 
     return 0;
 }
+int calc_star_size(int max, int max_dim)
+{
+    return max < max_dim ? 1 : max / max_dim + 1;
+}
 
-void print_horizontal_histogram(int stat[], int star_size)
+void print_horizontal_histogram(int stat[], int len, int star_size)
 {
 
     printf("Horizontal Histogram\n");
-    for (int i = 0; i < NBIN; i++)
+    for (int i = 0; i < len; i++)
     {
-        if (i < NBIN - 1)
+        if (i < len - 1)
         {
             printf("%10d: ", i + 1);
         }
         else
         {
-            printf("%d and %d+: ", NBIN, NBIN);
+            printf("%d and %d+: ", len, len);
         }
         for (int foo = stat[i]; foo > 0; foo -= star_size)
         {
@@ -79,13 +91,13 @@ void print_horizontal_histogram(int stat[], int star_size)
     }
 }
 
-void print_vertical_histogram(int stat[], int height, int star_size)
+void print_vertical_histogram(int stat[], int len, int height, int star_size)
 {
     printf("Vertical Histogram\n");
     for (int i = height - 1; i >= 1; i--)
     {
         printf("|");
-        for (int j = 0; j < NBIN; j++)
+        for (int j = 0; j < len; j++)
         {
             if (stat[j] >= (i * star_size))
             {
@@ -99,7 +111,7 @@ void print_vertical_histogram(int stat[], int height, int star_size)
         printf("\n");
     }
     printf("|");
-    for (int j = 0; j < NBIN; j++)
+    for (int j = 0; j < len; j++)
     {
         if (stat[j] > 0)
         {
@@ -111,8 +123,8 @@ void print_vertical_histogram(int stat[], int height, int star_size)
         }
     }
     printf("\n");
-    printf(" "); // Align the labels with the bars
-    for (int j = 0; j < NBIN; j++)
+    printf(" ");
+    for (int j = 0; j < len; j++)
     {
         printf("%2d ", j + 1);
     }
