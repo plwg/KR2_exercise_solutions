@@ -40,7 +40,7 @@ void print_horizontal_histogram(int stat[], int len, int star_size)
 {
     for (int i = 0; i < len; i++)
     {
-        if (stat[i] != 0)
+        if (stat[i] > 0)
         {
 
             putchar(i);
