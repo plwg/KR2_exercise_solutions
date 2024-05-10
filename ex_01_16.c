@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAXLINE 10 // '\n' and '\0' will each take up one space
+#define MAXLINE 1000 // '\n' and '\0' will each take up one space
 
 int getline_kr(char line[], int maxline);
 void copy(char to[], char from[]);
