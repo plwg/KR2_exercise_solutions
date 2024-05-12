@@ -3,13 +3,14 @@
 
 int main()
 {
+    const int MAXLINE = 9999;
+    const int MAX = 80;
+
     bool to_print = false;
     int c;
     int i;
     int count = 0;
     int bound;
-    const int MAXLINE = 9999;
-    const int MAX = 80;
     char line[MAXLINE];
 
     while (true)
