@@ -35,18 +35,26 @@ int main()
             if (to_print)
             {
                 bound = count < (MAXLINE - 1) ? count : (MAXLINE - 1);
-                if (line[bound] == '\n')
+                for (i = 0; i <= bound; i++)
                 {
-                    printf("%s", line);
+                    putchar(line[i]);
+                }
+                if (line[bound] != '\n')
+                {
+                    putchar('\n');
+                }
+
+                if (c != EOF)
+                {
+                    to_print = false;
+                    for (i = MAX; i <= bound; i++)
+                    {
+                        line[i] = 0;
+                    }
                 }
                 else
                 {
-                    printf("%s\n", line);
-                }
-                to_print = false;
-                for (i = MAX; i <= bound; i++)
-                {
-                    line[i] = 0;
+                    break;
                 }
             }
 
@@ -54,8 +62,11 @@ int main()
             {
                 break;
             }
+            else
+            {
+                count = 0;
+            }
 
-            count = 0;
         }
     }
     return 0;
