@@ -10,9 +10,9 @@ int main()
     char line[MAXLINE];
     int len;
 
-    while ((len = my_getline(line, MAXLINE))>0)
+    while ((len = my_getline(line, MAXLINE)) > 0)
     {
-        if (line[len-1] == '\n')
+        if (line[len - 1] == '\n')
         {
             reverse(line, len - 2);
         }
@@ -33,7 +33,7 @@ int my_getline(char s[], int lim)
 {
     int c, i;
 
-    for (i = 0; i < lim - 1 && (c = getchar())!=EOF && c!='\n'; ++i)
+    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
     {
         s[i] = c;
     }
