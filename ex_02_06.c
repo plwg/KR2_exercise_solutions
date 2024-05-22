@@ -36,7 +36,6 @@ unsigned setbits(unsigned x, unsigned p, unsigned n, unsigned y)
         printf("Position specified not left enough to accomodate bits.");
         printf("Returning original bits.");
         return x;
-
     }
     else if (p > (8 * sizeof(unsigned) - 1) || n > (8 * sizeof(unsigned)))
     {
