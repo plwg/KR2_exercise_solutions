@@ -7,8 +7,8 @@ void squeeze(char s1[], char s2[]);
 
 int main()
 {
-    char s[100] = "This is the best of time; this is the worst of time.\0";
-    char vowel[11] = "aeiouAEIOU\0";
+    char s[100] = "This is the best of time; this is the worst of time.";
+    char vowel[11] = "aeiouAEIOU";
 
     printf("%s\n", s);
 
