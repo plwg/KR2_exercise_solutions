@@ -33,7 +33,7 @@ unsigned rightrot(unsigned x, unsigned n)
     print_binary((mask & x) << (size_n - n));
 
     printf("%30s", "RESULT: ");
-    print_binary(res = ((mask & x) << (size_n - n) | (x >> n)));
+    print_binary(res = (((mask & x) << (size_n - n)) | (x >> n)));
 
     return res;
 }
