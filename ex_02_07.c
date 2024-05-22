@@ -6,10 +6,9 @@ unsigned invert(unsigned x, unsigned p, unsigned n);
 
 int main()
 {
-    unsigned x = 43812;
-    unsigned y = 42;
+    unsigned x = 26;
 
-    invert(x, 6, 5);
+    invert(x, 2, 3);
 
     return 0;
 }
