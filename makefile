@@ -5,7 +5,7 @@ CC=gcc
 CFLAGS=-O3 -Wall
 
 %.o: %.c
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@ -lm
 
 clean:
 	rm -rf *.o
