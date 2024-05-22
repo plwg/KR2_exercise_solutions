@@ -43,7 +43,7 @@ void copy(char from[], char to[])
 void squeeze(char s1[], char s2[])
 {
     char c;
-    char temp[strlen(s2)];
+    char temp[strlen(s2)+1];
 
     copy(s2, temp);
 
