@@ -1,6 +1,5 @@
 #include "print_binary.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 unsigned invert(unsigned x, unsigned p, unsigned n);
 

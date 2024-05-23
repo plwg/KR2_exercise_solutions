@@ -1,6 +1,5 @@
 #include "print_binary.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 unsigned rightrot(unsigned x, unsigned n);
 
