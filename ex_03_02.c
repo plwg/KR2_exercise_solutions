@@ -11,11 +11,11 @@ int main()
 
     printf("%s", source);
 
-    printf("\n\nExcaped\n");
+    printf("\n\nEscaped\n");
     escape(source, to);
     printf("%s", to);
 
-    printf("\n\nReverse-excaped\n");
+    printf("\n\nReverse-escaped\n");
     reverse_escape(to, toto);
     printf("%s", toto);
 
@@ -24,7 +24,7 @@ int main()
 
 void escape(char s[], char t[])
 {
-    int i,j;
+    int i, j;
     for (i = j = 0; s[i] != '\0';)
     {
         switch (s[i])
@@ -53,29 +53,31 @@ void escape(char s[], char t[])
 
 void reverse_escape(char s[], char t[])
 {
-    int i,j;
+    int i, j;
     for (i = j = 0; s[i] != '\0';)
     {
         if (s[i] == '\\')
         {
-            switch (s[i+1])
+            switch (s[i + 1])
             {
             case 't':
-                t[j++] = '\t';
-                i+=2;
+                t[j] = '\t';
+                i += 2;
                 break;
             case 'n':
-                t[j++] = '\n';
-                i+=2;
+                t[j] = '\n';
+                i += 2;
                 break;
             case '\\':
-                t[j++] = '\\';
-                i+=2;
+                t[j] = '\\';
+                i += 2;
                 break;
             default:
-                t[j++] = s[i++];
+                t[j] = s[i];
+                i++;
                 break;
             }
+            j++;
         }
         else
         {
