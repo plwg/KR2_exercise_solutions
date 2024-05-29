@@ -64,7 +64,6 @@ void expand(char s[])
         {
             to_expand = 1;
         }
-
         if (to_expand)
         {   
             end -= 2;
@@ -91,7 +90,6 @@ void expand(char s[])
             putchar(s[i]);
             i++;
         }
-
     }
     if (!end_with_expansion)
     {

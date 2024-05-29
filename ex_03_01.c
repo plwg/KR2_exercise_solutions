@@ -81,7 +81,6 @@ int binsearch_2(int x, int v[], int n)
         }
         mid = (low + high) / 2;
     }
-
     if (v[mid] == x)
     {
         return mid;
