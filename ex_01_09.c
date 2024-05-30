@@ -2,25 +2,20 @@
 
 #include <stdio.h>
 
-int main()
-{
-    int prev, current;
+int main() {
+  int prev, current;
 
-    prev = current = -1;
+  prev = current = -1;
 
-    while ((current = getchar()) != EOF)
-    {
-        if (prev == ' ' && current == ' ')
-        {
-            printf("");
-        }
-        else
-        {
-            putchar(current);
-        }
-
-        prev = current;
+  while ((current = getchar()) != EOF) {
+    if (prev == ' ' && current == ' ') {
+      printf("");
+    } else {
+      putchar(current);
     }
 
-    return 0;
+    prev = current;
+  }
+
+  return 0;
 }
