@@ -2,28 +2,35 @@
 
 #include <stdio.h>
 
-int main() {
-  int c;
+int main()
+{
+    int c;
 
-  double nb; // count of blank
-  double nt; // count of tab
-  double nn; // count of newline
+    double nb; // count of blank
+    double nt; // count of tab
+    double nn; // count of newline
 
-  nb = nt = nn = 0;
+    nb = nt = nn = 0;
 
-  while ((c = getchar()) != EOF) {
-    if (c == ' ') {
-      ++nb;
-    } else if (c == '\t') {
-      ++nt;
-    } else if (c == '\n') {
-      ++nn;
+    while ((c = getchar()) != EOF)
+    {
+        if (c == ' ')
+        {
+            ++nb;
+        }
+        else if (c == '\t')
+        {
+            ++nt;
+        }
+        else if (c == '\n')
+        {
+            ++nn;
+        }
     }
-  }
 
-  printf("%.0f\n", nb);
-  printf("%.0f\n", nt);
-  printf("%.0f\n", nn);
+    printf("%.0f\n", nb);
+    printf("%.0f\n", nt);
+    printf("%.0f\n", nn);
 
-  return 0;
+    return 0;
 }
