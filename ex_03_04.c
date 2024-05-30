@@ -1,3 +1,4 @@
+#include "reverse.h"
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>
@@ -52,16 +53,4 @@ void itoa(int n, char s[])
         s[0] = s[0] + 1;
     }
     reverse(s);
-}
-
-void reverse(char s[])
-{
-    int c, i, j;
-
-    for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
-    {
-        c = s[i];
-        s[i] = s[j];
-        s[j] = c;
-    }
 }
