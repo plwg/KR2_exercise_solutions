@@ -18,33 +18,18 @@ int getop(char s[])
     {
         return c;
     }
-    else if (c == '-')
+    i = 0;
+    if (c == '-')
     {
+        c = getch();
         // check whether the next character is digit or .
-        if ((c = getch()) == '.' || isdigit(c))
+        if (isdigit(c))
         {
-            i = 0;
-            s[++i] = c;
-            if (isdigit(c))
-            {
-                while (isdigit(s[++i] = c = getch()))
-                {
-                    ;
-                }
-            }
-            if (c == '.')
-            {
-                while (isdigit(s[++i] = c = getch()))
-                {
-                    ;
-                }
-            }
-            s[i] = '\0';
-            if (c != EOF)
-            {
-                ungetch(c);
-            }
-            return NUMBER;
+            ungetch(c);
+        }
+        else if (c == '.')
+        {
+            s[++i] = '.';
         }
         else
         {
@@ -53,28 +38,24 @@ int getop(char s[])
             return '-';
         }
     }
-    else
+    if (isdigit(c))
     {
-        i = 0;
-        if (isdigit(c))
+        while (isdigit(s[++i] = c = getch()))
         {
-            while (isdigit(s[++i] = c = getch()))
-            {
-                ;
-            }
+            ;
         }
-        if (c == '.')
-        {
-            while (isdigit(s[++i] = c = getch()))
-            {
-                ;
-            }
-        }
-        s[i] = '\0';
-        if (c != EOF)
-        {
-            ungetch(c);
-        }
-        return NUMBER;
     }
+    if (c == '.')
+    {
+        while (isdigit(s[++i] = c = getch()))
+        {
+            ;
+        }
+    }
+    s[i] = '\0';
+    if (c != EOF)
+    {
+        ungetch(c);
+    }
+    return NUMBER;
 }
