@@ -14,7 +14,7 @@ all: prog
 prog: main.o getop.o getch.o stack.o
 	$(CC) $^ -o $@ -lm
 %.o: %.c
-	$(CC) $(CFLAGS) $< -o $@ -lm
+	$(CC) $(CFLAGS) $< -o $@
 
 format_all:
 	$(CLANG_FORMAT) -i --style=Microsoft *.c *.h
