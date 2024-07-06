@@ -66,7 +66,6 @@ int getop(char s[])
 }
 
 
-// edge case kljdfsajfa;ls
 int get_math_function(int first)
 {
     char name[6];
@@ -75,31 +74,28 @@ int get_math_function(int first)
     
     ungetch(first);
 
-    while(i < 5 && (c = getch()) != ' ' && c != '\n' && c != EOF)
+    while((c = getch()) != ' ' && c != '\n' && c != EOF && i<5)
     {
         name[i++] = c; 
     } 
-
+    ungetch(c);
     name[i] = '\0';
+
     if (strcmp(name,"sin") == 0)
     {
-        ungetch(c);
         return SIN;
     }
     else if (strcmp(name,"pow") == 0)
     {
-        ungetch(c);
         return POW;
     }
     else if (strcmp(name,"exp") == 0)
     {
-        ungetch(c);
         return EXP;
     }
     else
     {
-        ungetch(c);
-        for (int j=0; name[j] != '\0'; j++)
+        for (int j=i-1; j>=0; j--)
         {
             ungetch(name[j]);
         }
