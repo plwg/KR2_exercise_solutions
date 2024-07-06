@@ -13,7 +13,7 @@ int getop(char s[])
         ;
     }
     s[1] = '\0';
-    
+
     if ((math_func = get_math_function(c)) != 0)
     {
         return math_func;
@@ -65,37 +65,36 @@ int getop(char s[])
     return NUMBER;
 }
 
-
 int get_math_function(int first)
 {
     char name[6];
     int c;
     int i = 0;
-    
+
     ungetch(first);
 
-    while((c = getch()) != ' ' && c != '\n' && c != EOF && i<5)
+    while ((c = getch()) != ' ' && c != '\n' && c != EOF && i < 5)
     {
-        name[i++] = c; 
-    } 
+        name[i++] = c;
+    }
     ungetch(c);
     name[i] = '\0';
 
-    if (strcmp(name,"sin") == 0)
+    if (strcmp(name, "sin") == 0)
     {
         return SIN;
     }
-    else if (strcmp(name,"pow") == 0)
+    else if (strcmp(name, "pow") == 0)
     {
         return POW;
     }
-    else if (strcmp(name,"exp") == 0)
+    else if (strcmp(name, "exp") == 0)
     {
         return EXP;
     }
     else
     {
-        for (int j=i-1; j>=0; j--)
+        for (int j = i - 1; j >= 0; j--)
         {
             ungetch(name[j]);
         }

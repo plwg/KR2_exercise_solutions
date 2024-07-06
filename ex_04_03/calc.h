@@ -11,5 +11,10 @@ void duplicate_top(void);
 void swap_top_two(void);
 void clear_stack(void);
 void print_stack(void);
-enum math_function {SIN = 256, EXP, POW};
+enum math_function
+{
+    SIN = 256,
+    EXP,
+    POW
+};
 int get_math_function(int first);
